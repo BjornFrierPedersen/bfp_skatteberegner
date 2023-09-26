@@ -17,7 +17,7 @@ public static class GaveListExtensions
                 break;
         }
         
-        source.UdregnAaretsGavePriser(personNavn);
+        source.UdregnAaretsGavePriser(gave.Pris, personNavn);
     }
     
     public static double UdregnSkattepligtigtBeloeb(this List<Gave> source)
