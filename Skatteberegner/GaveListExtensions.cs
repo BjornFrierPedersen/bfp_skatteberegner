@@ -18,7 +18,7 @@ public static class GaveListExtensions
                 break;
         }
         
-        source.UdregnAaretsGavePriser(gave.Pris, personNavn);
+        source.UdregnAaretsGavePriser(gave, personNavn);
     }
     
     public static double UdregnSkattepligtigtBeloeb(this List<Gave> source)
@@ -62,13 +62,13 @@ public static class GaveListExtensions
         return 0.0;
     }
     
-    private static void UdregnAaretsGavePriser(this List<Gave> source, double gavePris, string personNavn)
+    private static void UdregnAaretsGavePriser(this List<Gave> source, Gave gave, string personNavn)
     {
         var sum = source
             .Where(g => g.DatoGivet.Year.Equals(DateTime.Now.Year))
             .Sum(g => g.Pris);
 
         Console.WriteLine(
-            $"{personNavn} har modtaget en gave for en værdi af {gavePris} og har modtaget for i alt {sum} DKK i gaver i år");
+            $"{personNavn} har modtaget en {gave.GaveType} for en værdi af {gave.Pris} og har modtaget for i alt {sum} DKK i gaver i år");
     }
 }
