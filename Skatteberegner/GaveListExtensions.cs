@@ -55,12 +55,13 @@ public static class GaveListExtensions
         };
     }
     
-    private static void UdregnAaretsGavePriser(this List<Gave> source, string personNavn)
+    private static void UdregnAaretsGavePriser(this List<Gave> source, double gavePris, string personNavn)
     {
         var sum = source
             .Where(g => g.DatoGivet.Year.Equals(DateTime.Now.Year))
             .Sum(g => g.Pris);
 
-        Console.WriteLine($"{personNavn} har modtaget for {sum} DKK i gaver i år");
+        Console.WriteLine(
+            $"{personNavn} har modtaget en gave for en værdi af {gavePris} og har modtaget for i alt {sum} DKK i gaver i år");
     }
 }
