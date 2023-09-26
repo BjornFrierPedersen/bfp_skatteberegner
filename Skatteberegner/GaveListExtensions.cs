@@ -69,6 +69,6 @@ public static class GaveListExtensions
             .Sum(g => g.Pris);
 
         Console.WriteLine(
-            $"{personNavn} har modtaget en {gave.GaveType} for en værdi af {gave.Pris} og har modtaget for i alt {sum} DKK i gaver i år");
+            $"{personNavn} har modtaget en {gave.GaveType} for en værdi af {gave.Pris} DKK og har modtaget for i alt {sum} DKK i gaver i år");
     }
 }
